@@ -1,34 +1,4 @@
-----Employees details and the percentage of their salaries in their respective department.
-WITH P AS (
-  SELECT 
-    first_name, 
-    last_name, 
-    email, 
-    gender, 
-    department, 
-    salary, 
-    (
-      SELECT 
-        SUM(salary) 
-      FROM 
-        employees e1 
-      WHERE 
-        e1.department = e.department
-    ) total_salary_by_dept 
-  FROM 
-    employees e
-) 
-SELECT 
-  *, 
-  ROUND(
-    (salary / total_salary_by_dept) * 100, 
-    2
-  ) SalaryPercentage_by_department 
-from 
-  p 
-ORDER BY 
-  department, 
-  salary desc;
+
 
 ----Details of Employees who earn more than the average salary in their respective department. 
 SELECT 
