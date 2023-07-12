@@ -1,38 +1,6 @@
 
 
-----Details of Employees who earn more than the average salary in their respective department. 
-SELECT 
-  first_name, 
-  last_name, 
-  email, 
-  gender, 
-  department, 
-  salary, 
-  (
-    SELECT 
-      ROUND(
-        AVG(salary), 
-        2
-      ) 
-    FROM 
-      employees e1 
-    WHERE 
-      e1.department = e.department
-  ) average_salary_by_dept 
-FROM 
-  employees e 
-WHERE 
-  salary > (
-    SELECT 
-      AVG(salary) 
-    FROM 
-      employees e1 
-    WHERE 
-      e1.department = e.department
-  ) 
-ORDER BY 
-  department, 
-  salary desc 
+
 
 ----Total salaries of each division and their percentage of overall salary
   WITH C AS (
