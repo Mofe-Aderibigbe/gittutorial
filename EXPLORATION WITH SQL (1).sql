@@ -31,7 +31,7 @@ ORDER BY
   salary desc;
 
 ----Details of Employees who earn more than the average salary in their respective department. 
-  version 12
+  VERSION 13
 
 ----Total salaries of each division and their percentage of overall salary
   
